@@ -409,6 +409,7 @@
 				C4672C171BA952BD008960B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4672C181BA952BD008960B3 /* Build configuration list for PBXNativeTarget "design04Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				C4672C1A1BA952BD008960B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
