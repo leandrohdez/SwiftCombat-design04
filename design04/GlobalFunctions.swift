@@ -46,7 +46,7 @@ func ImageWithColor(color: UIColor, size: CGSize) -> UIImage {
 func imageWithImage(image: UIImage, newSize: CGSize) -> UIImage {
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
     image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
-    var newImage = UIGraphicsGetImageFromCurrentImageContext()
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     return newImage
 }

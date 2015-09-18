@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITableViewController, UIScrollViewDelegate {
+class MainViewController: UITableViewController {
 
     // constantes 
     let constHeaderHeight: CGFloat = 250
@@ -35,7 +35,7 @@ class MainViewController: UITableViewController, UIScrollViewDelegate {
         
         self.headerView!.frame = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), self.constHeaderHeight)
         
-        self.headerImage?.image = imageWithImage(UIImage(named: "wood")!, CGSizeMake(CGRectGetWidth(self.headerView!.frame), self.constHeaderHeight))
+        self.headerImage?.image = imageWithImage(UIImage(named: "wood")!, newSize: CGSizeMake(CGRectGetWidth(self.headerView!.frame), self.constHeaderHeight))
     }
 
 
@@ -50,7 +50,7 @@ class MainViewController: UITableViewController, UIScrollViewDelegate {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseCellIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseCellIdentifier", forIndexPath: indexPath) 
         return cell
     }
     
@@ -61,7 +61,7 @@ class MainViewController: UITableViewController, UIScrollViewDelegate {
     
     // MARK: -
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        var scrollOffsetY = self.constHeaderHeight - scrollView.contentOffset.y
+        let scrollOffsetY = self.constHeaderHeight - scrollView.contentOffset.y
         
         // stretch the header view if neccessary
         if scrollOffsetY > self.constHeaderHeight {
@@ -88,18 +88,18 @@ class MainViewController: UITableViewController, UIScrollViewDelegate {
     
     // MARK: -
     func headerTopLayoutConstraint() -> NSLayoutConstraint? {
-        for layout in self.headerView!.constraints() {
-            if (layout as! NSLayoutConstraint).firstAttribute == NSLayoutAttribute.Top {
-                return layout as? NSLayoutConstraint
+        for layout in self.headerView!.constraints {
+            if layout.firstAttribute == NSLayoutAttribute.Top {
+                return layout
             }
         }
         return nil
     }
     
     func headerBootomLayoutConstraint() -> NSLayoutConstraint? {
-        for layout in self.headerView!.constraints() {
-            if (layout as! NSLayoutConstraint).firstAttribute == NSLayoutAttribute.Bottom {
-                return layout as? NSLayoutConstraint
+        for layout in self.headerView!.constraints {
+            if layout.firstAttribute == NSLayoutAttribute.Bottom {
+                return layout
             }
         }
         return nil
@@ -110,7 +110,7 @@ class MainViewController: UITableViewController, UIScrollViewDelegate {
     func navigationBarVisibility(visible: Bool) {
         if visible == true {
             self.navigationController?.navigationBar.setBackgroundImage(ImageWithColor(UIColor.whiteColor()), forBarMetrics: UIBarMetrics.Default)
-            self.navigationController?.navigationBar.shadowImage = ImageWithColor(UIColor.darkGrayColor().colorWithAlphaComponent(0.4), CGSizeMake(0.5, 0.5))
+            self.navigationController?.navigationBar.shadowImage = ImageWithColor(UIColor.darkGrayColor().colorWithAlphaComponent(0.4), size: CGSizeMake(0.5, 0.5))
             self.navigationController?.navigationBar.translucent = true
         }
         else{
