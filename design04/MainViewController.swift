@@ -35,7 +35,7 @@ class MainViewController: UITableViewController {
         
         self.headerView!.frame = CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), self.constHeaderHeight)
         
-        self.headerImage?.image = imageWithImage(UIImage(named: "wood")!, newSize: CGSizeMake(CGRectGetWidth(self.headerView!.frame), self.constHeaderHeight))
+        self.headerImage?.image = imageWithImage(UIImage(named: "wood")!, newSize: CGSizeMake(/*CGRectGetWidth(self.headerView!.frame)*/320, /*self.constHeaderHeight*/250))
     }
 
 
@@ -66,12 +66,12 @@ class MainViewController: UITableViewController {
         // stretch the header view if neccessary
         if scrollOffsetY > self.constHeaderHeight {
             // stretch
-            self.headerImage!.contentMode = UIViewContentMode.ScaleAspectFill
+            //self.headerImage!.contentMode = UIViewContentMode.Center
             self.headerTopLayoutConstraint()?.constant = self.constHeaderHeight - scrollOffsetY
         }
         else {
             // scroll
-            self.headerImage!.contentMode = UIViewContentMode.Center
+            //self.headerImage!.contentMode = UIViewContentMode.Center
             self.headerTopLayoutConstraint()?.constant = -(self.constHeaderHeight - scrollOffsetY)
             self.headerBootomLayoutConstraint()?.constant = -2*(self.constHeaderHeight - scrollOffsetY)
         }
