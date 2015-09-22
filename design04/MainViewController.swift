@@ -27,7 +27,6 @@ class MainViewController: UITableViewController {
         // activar la propiedad del TableViewController (Under Top Bars) en el StoryBoard
         // desactivar la propiedad del TableViewController (Layout, Adjunt Scroll View Controller) en el StoryBoard
         self.view.sendSubviewToBack(self.headerView!)
-        
     }
     
     override func viewWillAppear(animated: Bool) {
