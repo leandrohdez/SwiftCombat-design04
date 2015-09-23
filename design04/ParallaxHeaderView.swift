@@ -25,17 +25,16 @@ class ParallaxHeaderView: UIView {
     var bluredImageView: UIImageView?
     
     
-    class func parallaxHeaderViewWithImage(image: UIImage, headerSize: CGSize) -> UIView {
-        let headerView = ParallaxHeaderView(frame: CGRectMake(0, 0, headerSize.width, headerSize.height))
-        headerView.backgroundImage = image
-        headerView.performHeaderViewData()
-        return headerView
+    // MARK: - Initialization
+    init(image: UIImage, frame: CGSize) {
+        self.backgroundImage = image
+        super.init(frame: CGRectMake(0, 0, frame.width, frame.height))
+        // do "performs"
+        performHeaderViewData()
     }
     
-    class func parallaxHeaderViewWithSubview(subview: UIView) -> UIView {
-        let headerView = ParallaxHeaderView(frame: CGRectMake(0, 0, subview.frame.size.width, subview.frame.size.height))
-        headerView.performHeaderCustomView(subview)
-        return headerView
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -49,8 +48,9 @@ class ParallaxHeaderView: UIView {
             self.clipsToBounds = true
         }
         else{
+            let margin: CGFloat = 8
             var delta: CGFloat = 0
-            var rect: CGRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+            var rect: CGRect = CGRectMake(0, 0, CGRectGetWidth(UIScreen.mainScreen().bounds)+margin, CGRectGetHeight(self.frame))
             delta = fabs(min(0, offset.y))
             rect.origin.y -= delta
             rect.size.height += delta
@@ -66,34 +66,18 @@ class ParallaxHeaderView: UIView {
         let scrollView = UIScrollView(frame: self.bounds)
         self.imageScrollView = scrollView
         
-        let imageView = UIImageView(frame: scrollView.bounds)
+        let imageView = TintImage(frame: scrollView.bounds)
         imageView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleWidth, .FlexibleHeight]
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.image = self.backgroundImage
+        imageView.overlayLayerColor(UIColorFromRGB(0x1a84be))
         self.imageScrollView!.addSubview(imageView)
         
-        self.addSubview(self.imageScrollView!)
-    }
-    
-    func performHeaderCustomView(subview: UIView) {
-        let scrollView = UIScrollView(frame: self.bounds)
-        self.imageScrollView = scrollView
-        self.subview = subview
-        subview.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleWidth, .FlexibleHeight]
-        self.imageScrollView!.addSubview(subview)
+        var userPhoto = UIImageView()
         
         self.addSubview(self.imageScrollView!)
     }
     
-    func screenShotOfView (view: UIView) -> UIImage {
-        let rectSize: CGRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
-        
-        UIGraphicsBeginImageContextWithOptions(rectSize.size, true, 0)
-        self.drawViewHierarchyInRect(rectSize, afterScreenUpdates: false)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return image
-    }
+
     
 }

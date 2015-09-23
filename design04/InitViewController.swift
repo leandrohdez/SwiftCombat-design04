@@ -19,20 +19,23 @@ class InitViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationBarVisibility(false)
+        
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
-    
-        let headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "Jiker")!, headerSize: CGSizeMake(CGRectGetWidth(self.tableView!.frame), 300))
-        (headerView as! ParallaxHeaderView).titleLabel.text = "Hola mundo"
+        
+        let height: CGFloat = CGRectGetHeight(UIScreen.mainScreen().bounds)*0.35
+        
+        let headerView = ParallaxHeaderView(image: UIImage(named: "193503__nature-twigs-branches-leaves-autumn-snow_p")!, frame: CGSizeMake(CGRectGetWidth(UIScreen.mainScreen().bounds), height))
+        headerView.titleLabel.text = "Hola mundo"
         
         self.tableView!.tableHeaderView = headerView
+        
     }
 
     override func viewDidAppear(animated: Bool) {
-        let headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "Jiker")!, headerSize: CGSizeMake(CGRectGetWidth(self.tableView!.frame), 300))
-        (headerView as! ParallaxHeaderView).titleLabel.text = "Hola mundo"
+        super.viewDidAppear(animated)
         
-        self.tableView!.tableHeaderView = headerView
     }
     
     
@@ -51,11 +54,32 @@ class InitViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
     
     // MARK: -
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView == self.tableView {
             (self.tableView!.tableHeaderView as! ParallaxHeaderView).layoutHeaderViewForScrollViewOffset(scrollView.contentOffset)
+        }
+    }
+    
+    // MARK: -
+    func navigationBarVisibility(visible: Bool) {
+        if visible == true {
+            self.navigationController?.navigationBar.setBackgroundImage(ImageWithColor(UIColor.whiteColor()), forBarMetrics: UIBarMetrics.Default)
+            self.navigationController?.navigationBar.shadowImage = ImageWithColor(UIColor.darkGrayColor().colorWithAlphaComponent(0.4), size: CGSizeMake(0.5, 0.5))
+            self.navigationController?.navigationBar.translucent = true
+        }
+        else{
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.translucent = true
         }
     }
     

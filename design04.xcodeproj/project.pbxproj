@@ -12,6 +12,7 @@
 		C4672C031BA952BD008960B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4672C021BA952BD008960B3 /* Images.xcassets */; };
 		C4672C061BA952BD008960B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4672C041BA952BD008960B3 /* LaunchScreen.xib */; };
 		C4672C121BA952BD008960B3 /* design04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4672C111BA952BD008960B3 /* design04Tests.swift */; };
+		C4CA22181BB2CE94009208D0 /* TintImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA22171BB2CE94009208D0 /* TintImage.swift */; settings = {ASSET_TAGS = (); }; };
 		C4D79A031BB14A2E00BBE138 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D79A021BB14A2E00BBE138 /* InitViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		C4E8075B1BAA9CF700BE52BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8075A1BAA9CF700BE52BF /* MainViewController.swift */; };
 		C4E8075D1BAAAC0B00BE52BF /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8075C1BAAAC0B00BE52BF /* GlobalFunctions.swift */; };
@@ -41,6 +42,7 @@
 		C4672C0B1BA952BD008960B3 /* design04Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = design04Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4672C101BA952BD008960B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4672C111BA952BD008960B3 /* design04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = design04Tests.swift; sourceTree = "<group>"; };
+		C4CA22171BB2CE94009208D0 /* TintImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintImage.swift; sourceTree = "<group>"; };
 		C4D79A021BB14A2E00BBE138 /* InitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		C4E8075A1BAA9CF700BE52BF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C4E8075C1BAAAC0B00BE52BF /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				C4672C041BA952BD008960B3 /* LaunchScreen.xib */,
 				C4672BF91BA952BD008960B3 /* Supporting Files */,
 				C4D79A021BB14A2E00BBE138 /* InitViewController.swift */,
+				C4CA22171BB2CE94009208D0 /* TintImage.swift */,
 			);
 			path = design04;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				C4FA91E81BB045C1002C2EFB /* ParallaxHeaderView.swift in Sources */,
 				C4672BFC1BA952BD008960B3 /* AppDelegate.swift in Sources */,
+				C4CA22181BB2CE94009208D0 /* TintImage.swift in Sources */,
 				C4D79A031BB14A2E00BBE138 /* InitViewController.swift in Sources */,
 				C4E8075B1BAA9CF700BE52BF /* MainViewController.swift in Sources */,
 				C4E8075D1BAAAC0B00BE52BF /* GlobalFunctions.swift in Sources */,
