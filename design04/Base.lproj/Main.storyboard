@@ -20,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2VB-eh-x8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="187"/>
+            <point key="canvasLocation" x="545" y="-632"/>
         </scene>
         <!--Init View Controller-->
         <scene sceneID="3Op-3v-PgC">
@@ -65,55 +65,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moE-Vf-7Wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1311" y="-632"/>
-        </scene>
-        <!--Main View Controller-->
-        <scene sceneID="gvq-Q7-jpc">
-            <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="EFc-BX-SHf" customClass="MainViewController" customModule="design04" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rml-SY-aEH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="gid-oA-TAK">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-OR-Px2">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" red="0.5568627451" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstItem="fcB-OR-Px2" firstAttribute="top" secondItem="gid-oA-TAK" secondAttribute="top" id="9Nd-HS-O7d"/>
-                                <constraint firstItem="fcB-OR-Px2" firstAttribute="leading" secondItem="gid-oA-TAK" secondAttribute="leading" id="UQQ-RY-cIy"/>
-                                <constraint firstAttribute="trailing" secondItem="fcB-OR-Px2" secondAttribute="trailing" id="vz8-5Y-Zk0"/>
-                                <constraint firstAttribute="bottom" secondItem="fcB-OR-Px2" secondAttribute="bottom" id="wCg-7K-6ij"/>
-                            </constraints>
-                        </view>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseCellIdentifier" id="2aG-jN-t9p">
-                                <rect key="frame" x="0.0" y="272" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2aG-jN-t9p" id="mT0-14-GE8">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="EFc-BX-SHf" id="Isn-Cq-99c"/>
-                            <outlet property="delegate" destination="EFc-BX-SHf" id="AMX-cg-dTZ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="L02-vu-e2O"/>
-                    <connections>
-                        <outlet property="headerImage" destination="fcB-OR-Px2" id="9rH-yC-oec"/>
-                        <outlet property="headerView" destination="gid-oA-TAK" id="agL-x9-5Cv"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xsm-wU-2SQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="685" y="187"/>
         </scene>
     </scenes>
 </document>
