@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4147B941BB9573900129017 /* UserMessageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4147B931BB9573900129017 /* UserMessageTextCell.swift */; settings = {ASSET_TAGS = (); }; };
 		C4672BFC1BA952BD008960B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4672BFB1BA952BD008960B3 /* AppDelegate.swift */; };
 		C4672C011BA952BD008960B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4672BFF1BA952BD008960B3 /* Main.storyboard */; };
 		C4672C031BA952BD008960B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4672C021BA952BD008960B3 /* Images.xcassets */; };
@@ -32,6 +33,7 @@
 		085A42826446EF5D639DF812 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8B20A2F5596B5C2411ABA4F1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB58B7DFB04F30DF85CA297D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C4147B931BB9573900129017 /* UserMessageTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageTextCell.swift; sourceTree = "<group>"; };
 		C4672BF61BA952BD008960B3 /* design04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = design04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4672BFA1BA952BD008960B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4672BFB1BA952BD008960B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				C4D79A021BB14A2E00BBE138 /* InitViewController.swift */,
 				C4FA91E71BB045C1002C2EFB /* ParallaxHeaderView.swift */,
 				C4CA22171BB2CE94009208D0 /* TintImage.swift */,
+				C4147B931BB9573900129017 /* UserMessageTextCell.swift */,
 				C4672BFF1BA952BD008960B3 /* Main.storyboard */,
 				C4672C021BA952BD008960B3 /* Images.xcassets */,
 				C4672C041BA952BD008960B3 /* LaunchScreen.xib */,
@@ -194,6 +197,7 @@
 				TargetAttributes = {
 					C4672BF51BA952BD008960B3 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = M44266746X;
 					};
 					C4672C0A1BA952BD008960B3 = {
 						CreatedOnToolsVersion = 6.4;
@@ -246,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4FA91E81BB045C1002C2EFB /* ParallaxHeaderView.swift in Sources */,
+				C4147B941BB9573900129017 /* UserMessageTextCell.swift in Sources */,
 				C4672BFC1BA952BD008960B3 /* AppDelegate.swift in Sources */,
 				C4CA22181BB2CE94009208D0 /* TintImage.swift in Sources */,
 				C4D79A031BB14A2E00BBE138 /* InitViewController.swift in Sources */,
@@ -308,7 +313,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -353,7 +358,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -377,10 +382,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = design04/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swiftcombat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -389,10 +397,13 @@
 			baseConfigurationReference = 085A42826446EF5D639DF812 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = design04/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swiftcombat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

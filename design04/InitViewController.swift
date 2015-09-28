@@ -26,7 +26,7 @@ class InitViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationBarVisibility(false)
         
         self.navigationItem.rightBarButtonItem  = UIBarButtonItem(image: UIImage(named: "setting-icon"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("settingAction"))
-        self.navigationItem.leftBarButtonItem   = UIBarButtonItem(image: UIImage(named: "share-icon"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("shareAction"))
+        self.navigationItem.leftBarButtonItem   = UIBarButtonItem(image: UIImage(named: "back_icon"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("shareAction"))
         
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
@@ -61,6 +61,8 @@ class InitViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         self.tableView!.tableHeaderView = headerView
+        
+        self.tableView!.separatorStyle = UITableViewCellSeparatorStyle.None
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -87,8 +89,8 @@ class InitViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-        cell.textLabel?.text = "asd"
+        let cell = UserMessageTextCell()
+        
         return cell
     }
     
@@ -97,7 +99,7 @@ class InitViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        return 65
     }
     
     // MARK: -
