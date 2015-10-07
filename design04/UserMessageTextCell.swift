@@ -14,9 +14,16 @@ class UserMessageTextCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: reuseIdentifier)
         
-        let userPictureView = UIView(frame: CGRectMake(0, 0, 75, 65))
+        let userPictureView = UIView(frame: CGRectMake(0, 0, 76, 66))
         userPictureView.backgroundColor = UIColor.redColor()
         self.addSubview(userPictureView)
+        
+        let pictureImageView = TintImage(frame: CGRectMake(9, 3, 60, 60))
+        pictureImageView.image = UIImage(named: "photo1")
+        pictureImageView.layer.cornerRadius = CGRectGetWidth(pictureImageView.frame)/2
+        pictureImageView.clipsToBounds = true
+        pictureImageView.overlayLayerColor(UIColor.grayColor())
+        userPictureView.addSubview(pictureImageView)
         
         let disclouseImage = UIImageView(frame: CGRectMake(0, 0, 9, 15))
         disclouseImage.image = UIImage(named: "disclouse_icon")
